@@ -135,6 +135,29 @@
           <li><a href="https://github.com/erfan-zamanzade/k3s-platform-lab/actions/workflows/ci.yml">Pipeline runs</a></li>
         </ul>
       </article>
+
+      <article class="project">
+        <div class="project-main">
+          <h3><a href="https://github.com/erfan-zamanzade/ansible-server-baseline">ansible-server-baseline</a></h3>
+          <p class="tracks"><span class="track">DevOps</span></p>
+          <p>
+            Ansible roles that turn a fresh Debian or Ubuntu server into a hardened Docker host
+            running the same service behind Nginx, with backups that are restored and checked
+            every week. Molecule tests every role on three distributions and checks the result
+            from outside, the way a client or an attacker would see it.
+          </p>
+          <ul class="proof">
+            <li>Key-only SSH with a guard that refuses to lock everyone out; fail2ban bans tested with real failed logins</li>
+            <li>nftables firewall that survives restarts without wiping Docker&#8217;s or fail2ban&#8217;s rules, checked with port scans</li>
+            <li>Restore drill: delete the database volume, restore from restic, get the data and the app back</li>
+            <li>Backup, restore and health-check results exported to Prometheus, with unit-tested alert rules</li>
+          </ul>
+        </div>
+        <ul class="project-links" aria-label="ansible-server-baseline links">
+          <li><a href="https://github.com/erfan-zamanzade/ansible-server-baseline">Source code</a></li>
+          <li><a href="https://github.com/erfan-zamanzade/ansible-server-baseline/actions/workflows/ci.yml">Pipeline runs</a></li>
+        </ul>
+      </article>
     </section>
 
     <section class="experience wrap" id="experience" aria-labelledby="experience-title">
@@ -195,7 +218,8 @@
             <dt>Supply chain</dt><dd>Trivy, SBOM, build provenance, Dependabot</dd>
             <dt>Images</dt><dd>Multi-stage and multi-architecture builds, GHCR</dd>
             <dt>Kubernetes</dt><dd>Helm, cert-manager, network policies, kube-prometheus-stack, k3d</dd>
-            <dt>Testing</dt><dd>helm-unittest, promtool rule tests, kubeconform, failure drills</dd>
+            <dt>Server automation</dt><dd>Ansible, Molecule, nftables, fail2ban, restic, node_exporter</dd>
+            <dt>Testing</dt><dd>helm-unittest, promtool rule tests, kubeconform, ansible-lint, failure and restore drills</dd>
             <dt>Code quality</dt><dd>PHPStan, Pint, hadolint, actionlint</dd>
           </dl>
         </div>
