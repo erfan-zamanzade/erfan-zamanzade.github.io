@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Erfan Zamanzade, DevOps Engineer</title>
+  <meta name="description" content="DevOps engineer with a PHP and Laravel backend background. Linux, Docker, Kubernetes (k3s), GitLab CI/CD, GitHub Actions, Prometheus and Grafana. Open to remote work.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; font-src 'self'; img-src 'self'; connect-src https://api.github.com; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="light dark">
+  <link rel="canonical" href="https://erfan-zamanzade.github.io/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Erfan Zamanzade, DevOps Engineer">
+  <meta property="og:description" content="Pipelines, Kubernetes and Linux servers for Laravel services. Open to remote work.">
+  <meta property="og:url" content="https://erfan-zamanzade.github.io/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Erfan Zamanzade",
+    "jobTitle": "DevOps Engineer",
+    "url": "https://erfan-zamanzade.github.io/",
+    "email": "mailto:erfanzamanzade@gmail.com",
+    "sameAs": [
+      "https://github.com/erfan-zamanzade",
+      "https://www.linkedin.com/in/erfan-zamanzade/"
+    ]
+  }
+  </script>
+  <script src="assets/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="name" href="#top">Erfan Zamanzade</a>
+      <nav aria-label="Sections">
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="top" aria-labelledby="hero-title">
+      <p class="role">DevOps engineer, backend background, open to remote work</p>
+      <h1 id="hero-title">I build the pipelines, clusters and servers that keep Laravel services running.</h1>
+      <p class="lede">
+        Years of building PHP and Laravel backends taught me what applications need from
+        their infrastructure. Since 2024 I have also run that infrastructure: Linux and
+        Nginx on Hetzner, Docker and k3s, GitLab CI/CD and GitHub Actions, Prometheus and
+        Grafana.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="https://rx.cv/erfan-zamanzade/devops-engineer">DevOps resume</a>
+        <a class="button" href="https://rx.cv/erfan-zamanzade/backend-developer">Backend resume</a>
+      </div>
+    </section>
+
+    <section class="pipeline wrap" aria-labelledby="pipeline-title">
+      <div class="pipeline-head">
+        <h2 id="pipeline-title">Latest pipeline run</h2>
+        <p class="pipeline-meta" data-run-meta>
+          <a href="https://github.com/erfan-zamanzade/laravel-cicd-pipeline/actions/workflows/ci.yml">laravel-cicd-pipeline on GitHub Actions</a>
+        </p>
+      </div>
+      <ol class="stages" data-stages aria-live="polite">
+        <li class="stage"><span class="dot" aria-hidden="true"></span>Lint and static analysis</li>
+        <li class="stage"><span class="dot" aria-hidden="true"></span>Tests on PostgreSQL and Redis</li>
+        <li class="stage"><span class="dot" aria-hidden="true"></span>Dockerfile lint</li>
+        <li class="stage"><span class="dot" aria-hidden="true"></span>Build, smoke test and scan</li>
+        <li class="stage"><span class="dot" aria-hidden="true"></span>Publish to GHCR</li>
+      </ol>
+      <p class="pipeline-note">Read live from the GitHub API when this page loads.</p>
+    </section>
+
+    <section class="projects wrap" id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+      <p class="section-intro">
+        Public repositories built to show how I work. Every claim in them is backed by a
+        pipeline run or a script you can run yourself.
+      </p>
+
+      <article class="project">
+        <div class="project-main">
+          <h3><a href="https://github.com/erfan-zamanzade/laravel-cicd-pipeline">laravel-cicd-pipeline</a></h3>
+          <p class="tracks"><span class="track">DevOps</span> <span class="track">Backend</span></p>
+          <p>
+            A CI/CD pipeline for a small Laravel service. Every change is linted, tested
+            against real PostgreSQL and Redis, built into a container, smoke tested with a
+            database outage drill, scanned for vulnerabilities and published with an SBOM
+            and build provenance.
+          </p>
+          <ul class="proof">
+            <li>GitHub Actions with SHA-pinned actions and least-privilege permissions, plus an equivalent GitLab CI file</li>
+            <li>Trivy gate that stopped a real HIGH vulnerability in the base image</li>
+            <li>Multi-architecture image (amd64 and arm64) on GitHub Container Registry</li>
+            <li>PHPUnit against PostgreSQL 17 and Redis 7, PHPStan level 8, 92.9% line coverage</li>
+          </ul>
+        </div>
+        <ul class="project-links" aria-label="laravel-cicd-pipeline links">
+          <li><a href="https://github.com/erfan-zamanzade/laravel-cicd-pipeline">Source code</a></li>
+          <li><a href="https://github.com/erfan-zamanzade/laravel-cicd-pipeline/actions/workflows/ci.yml">Pipeline runs</a></li>
+          <li><a href="https://github.com/erfan-zamanzade/laravel-cicd-pipeline/pkgs/container/laravel-cicd-pipeline">Container image</a></li>
+        </ul>
+      </article>
+
+      <article class="project upcoming">
+        <div class="project-main">
+          <h3>k3s-platform-lab</h3>
+          <p class="tracks"><span class="track">DevOps</span> <span class="status">In progress</span></p>
+          <p>
+            Deploys the image above to a local k3s cluster with a Helm chart, TLS ingress,
+            rolling updates and rollback, then monitors it with Prometheus, Grafana and
+            Alertmanager through scripted failure drills.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section class="experience wrap" id="experience" aria-labelledby="experience-title">
+      <h2 id="experience-title">Experience</h2>
+      <ol class="timeline">
+        <li>
+          <p class="period">2024 to 2026</p>
+          <div>
+            <h3>Tech Lead, DevOps and Backend</h3>
+            <p class="org">Ayande Nevisan</p>
+            <p>Ran Linux servers and Nginx on Hetzner and Liara, deployed services on k3s, built GitLab CI/CD and GitHub Actions pipelines, and set up Prometheus and Grafana monitoring.</p>
+          </div>
+        </li>
+        <li>
+          <p class="period">2022 to 2023</p>
+          <div>
+            <h3>Backend Developer</h3>
+            <p class="org">Paziresh24</p>
+            <p>Built and maintained Laravel REST APIs, tuned database queries, and worked with the Docker and Kubernetes deployment environment.</p>
+          </div>
+        </li>
+        <li>
+          <p class="period">2019 to 2021</p>
+          <div>
+            <h3>Project Manager and Laravel Developer</h3>
+            <p class="org">Tino Novin Afzar</p>
+            <p>Built Laravel web services, including real-time services and the backends of Instagram and Telegram bots.</p>
+          </div>
+        </li>
+        <li>
+          <p class="period">2018 to 2019</p>
+          <div>
+            <h3>Software Developer</h3>
+            <p class="org">APA Technology Center, University of Yazd</p>
+            <p>Developed software with Node.js and Angular.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="skills wrap" id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills</h2>
+      <div class="skill-groups">
+        <div>
+          <h3>Used at work</h3>
+          <dl>
+            <dt>Infrastructure</dt><dd>Linux, Nginx, reverse proxy, Hetzner, Liara</dd>
+            <dt>Containers</dt><dd>Docker, Kubernetes, k3s</dd>
+            <dt>CI/CD</dt><dd>GitLab CI/CD, GitLab Runner, GitHub Actions, Git</dd>
+            <dt>Monitoring</dt><dd>Prometheus, Grafana, incident troubleshooting</dd>
+            <dt>Data</dt><dd>MySQL, PostgreSQL, MongoDB, Redis</dd>
+            <dt>Backend</dt><dd>PHP, Laravel, REST APIs</dd>
+          </dl>
+        </div>
+        <div>
+          <h3>Shown in these projects</h3>
+          <dl>
+            <dt>Supply chain</dt><dd>Trivy, SBOM, build provenance, Dependabot</dd>
+            <dt>Images</dt><dd>Multi-stage and multi-architecture builds, GHCR</dd>
+            <dt>Code quality</dt><dd>PHPStan, Pint, hadolint, actionlint</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact wrap" id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p>The fastest way to reach me is email.</p>
+      <ul class="contact-links">
+        <li><a href="mailto:erfanzamanzade@gmail.com">erfanzamanzade@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/erfan-zamanzade/">LinkedIn</a></li>
+        <li><a href="https://github.com/erfan-zamanzade">GitHub</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Static HTML and CSS, deployed by <a href="https://github.com/erfan-zamanzade/erfan-zamanzade.github.io">GitHub Actions</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>
