@@ -95,15 +95,15 @@
           <p class="tracks"><span class="track">DevOps</span> <span class="track">Backend</span></p>
           <p>
             A CI/CD pipeline for a small Laravel service. Every change is linted, tested
-            against real PostgreSQL and Redis, built into a container, smoke tested with a
-            database outage drill, scanned for vulnerabilities and published with an SBOM
+            against real PostgreSQL and Redis, built into a container, smoke tested with
+            database and Redis outage drills, scanned for vulnerabilities and published with an SBOM
             and build provenance.
           </p>
           <ul class="proof">
             <li>GitHub Actions with SHA-pinned actions and least-privilege permissions, plus an equivalent GitLab CI file</li>
             <li>Trivy gate that stopped a real HIGH vulnerability in the base image</li>
             <li>Multi-architecture image (amd64 and arm64) on GitHub Container Registry</li>
-            <li>PHPUnit against PostgreSQL 17 and Redis 7, PHPStan level 8, 92.9% line coverage</li>
+            <li>PHPUnit against PostgreSQL 17 and Redis 7, PHPStan level 8, 93% line coverage</li>
           </ul>
         </div>
         <ul class="project-links" aria-label="laravel-cicd-pipeline links">
@@ -113,16 +113,27 @@
         </ul>
       </article>
 
-      <article class="project upcoming">
+      <article class="project">
         <div class="project-main">
-          <h3>k3s-platform-lab</h3>
-          <p class="tracks"><span class="track">DevOps</span> <span class="status">In progress</span></p>
+          <h3><a href="https://github.com/erfan-zamanzade/k3s-platform-lab">k3s-platform-lab</a></h3>
+          <p class="tracks"><span class="track">DevOps</span></p>
           <p>
-            Deploys the image above to a local k3s cluster with a Helm chart, TLS ingress,
-            rolling updates and rollback, then monitors it with Prometheus, Grafana and
-            Alertmanager through scripted failure drills.
+            Runs the image above on a k3s cluster with a Helm chart, TLS ingress and network
+            policies, monitors it with Prometheus, Grafana and Alertmanager, then breaks it on
+            purpose: rolling updates, rollbacks and failure drills under live traffic, all
+            repeated on every push in GitHub Actions.
           </p>
+          <ul class="proof">
+            <li>Zero failed requests through a rolling update, a rollback, a pod loss and a broken release</li>
+            <li>PostgreSQL and Redis outages detected and alerted within about a minute, with no pod restarts</li>
+            <li>A Redis drill found a real bug in the application; it was fixed and shipped as version 1.0.1</li>
+            <li>Alert rules unit-tested with promtool, chart tested with helm-unittest and kubeconform</li>
+          </ul>
         </div>
+        <ul class="project-links" aria-label="k3s-platform-lab links">
+          <li><a href="https://github.com/erfan-zamanzade/k3s-platform-lab">Source code</a></li>
+          <li><a href="https://github.com/erfan-zamanzade/k3s-platform-lab/actions/workflows/ci.yml">Pipeline runs</a></li>
+        </ul>
       </article>
     </section>
 
@@ -183,6 +194,8 @@
           <dl>
             <dt>Supply chain</dt><dd>Trivy, SBOM, build provenance, Dependabot</dd>
             <dt>Images</dt><dd>Multi-stage and multi-architecture builds, GHCR</dd>
+            <dt>Kubernetes</dt><dd>Helm, cert-manager, network policies, kube-prometheus-stack, k3d</dd>
+            <dt>Testing</dt><dd>helm-unittest, promtool rule tests, kubeconform, failure drills</dd>
             <dt>Code quality</dt><dd>PHPStan, Pint, hadolint, actionlint</dd>
           </dl>
         </div>
